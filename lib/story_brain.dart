@@ -67,6 +67,7 @@ class StoryBrain {
     }
   }
 
+  //Hide Choice 2
   bool hideButton() {
     if (_storyNumber == 3 || _storyNumber == 4 || _storyNumber == 5) {
       return false;

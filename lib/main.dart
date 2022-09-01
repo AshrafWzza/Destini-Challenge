@@ -31,7 +31,6 @@ class _StoryPageState extends State<StoryPage> {
           ),
         ),
         padding: EdgeInsets.symmetric(vertical: 50.0, horizontal: 15.0),
-        constraints: BoxConstraints.expand(),
         child: SafeArea(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -41,9 +40,7 @@ class _StoryPageState extends State<StoryPage> {
                 child: Center(
                   child: Text(
                     storyBrain.getStory(),
-                    style: TextStyle(
-                      fontSize: 25.0,
-                    ),
+                    style: TextStyle(fontSize: 25.0),
                   ),
                 ),
               ),
@@ -52,7 +49,7 @@ class _StoryPageState extends State<StoryPage> {
                 child: TextButton(
                   onPressed: () {
                     setState(() {
-                      //Mantatory To Reload The widget
+                      //Mandatory To Reload The widget
                       storyBrain.nextStory(1);
                     });
                     //Choice 1 made by user.
@@ -73,13 +70,13 @@ class _StoryPageState extends State<StoryPage> {
               Expanded(
                 flex: 2,
                 child: Visibility(
-                  //hide 2nd button, only (Restart)
+                  //hide 2nd button, show only (Restart)
                   visible: storyBrain.hideButton(), //hide 2nd button
                   child: TextButton(
                     onPressed: () {
                       //Choice 2 made by user.
                       setState(() {
-                        //Mantatory To Reload The widget
+                        //Mandatory To Reload The widget
                         storyBrain.nextStory(2);
                       });
                     },
